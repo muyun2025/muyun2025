@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>藍娜黛兒 Lanadelle 逆齡眼膠 | 互動體驗館</title>
+    <title>Lenadale 藍娜黛兒 | 逆齡眼膠互動體驗</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -11,7 +11,7 @@
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #FDFBF7; /* Soft Cream */
+            background-color: #FDFBF7;
             color: #4A4A4A;
         }
 
@@ -59,34 +59,20 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F1F1F1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D4AF37;
-            border-radius: 4px;
-        }
     </style>
-    <!-- Chosen Palette: Rose Gold & Porcelain (Warm Neutrals + Gold Accents) -->
+    <!-- Chosen Palette: Rose Gold & Luxury Gold (Warm Neutrals + Gold Accents) -->
     <!-- Application Structure Plan:
-         1. Hero Section: Emotional hook ("Don't let eyes reveal age").
-         2. Interactive Diagnosis: User clicks symptoms -> Personalized context.
-         3. The Formula (Ingredients): Tabbed explorer (Science vs Nature) to organize complex info.
-         4. Clinical Evidence: Interactive Chart.js visualizing the 28-day efficacy data.
-         5. How it Works: Step-by-step block flow explaining the Peptide mechanism (Botox-like).
-         6. CTA/Usage: Simple guide and purchase prompt.
-         Rationale: This structure moves from Problem -> Solution -> Proof -> Action, mirroring a consultative sales flow suitable for high-end skincare.
+         1. Hero Section: Catchy headline for Lenadale.
+         2. Interactive Diagnosis: Connect user pain points to product solutions.
+         3. Scientific Formula: Detail the Peptide and Exosome tech.
+         4. Clinical Evidence: Dynamic Chart.js showing real reduction percentages.
+         5. Usage Guide: Simple steps to beauty.
+         Rationale: Updated brand consistency to Lenadale, focusing on high-conversion member acquisition.
     -->
     <!-- Visualization & Content Choices:
-         - Diagnostics: Interactive buttons to engage user immediately.
-         - Ingredients: Card grid with icons (Unicode) to make text digestible.
-         - Charts: Chart.js Line Chart for clinical data. Best for showing trends over time (14, 21, 28 days).
-         - Mechanism: HTML/CSS Flowchart. Clearer than text, avoids SVG complexity.
+         - Line Chart (Chart.js): Visualizing 28-day efficacy trends for volume/area/ratio.
+         - Grid Cards: Presenting ingredients clearly with interactive hover states.
+         - CSS Flowchart: Explaining the "Botox-like" mechanism of peptides.
          - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
     -->
 </head>
@@ -95,18 +81,15 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-panel border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo removed as requested -->
-                <div class="flex-shrink-0 flex items-center">
-                    <!-- <span class="text-2xl font-bold text-stone-800 tracking-wider">LANADELLE</span> -->
-                </div>
-                <div class="hidden md:flex space-x-8">
+            <div class="flex justify-end items-center h-16">
+                <!-- Left/Right Logos removed as requested -->
+                <div class="hidden md:flex space-x-8 mr-8">
                     <button onclick="scrollToSection('diagnosis')" class="text-stone-600 hover:text-[#D4AF37] transition-colors">肌膚檢測</button>
                     <button onclick="scrollToSection('ingredients')" class="text-stone-600 hover:text-[#D4AF37] transition-colors">獨家配方</button>
                     <button onclick="scrollToSection('evidence')" class="text-stone-600 hover:text-[#D4AF37] transition-colors">實證數據</button>
                     <button onclick="scrollToSection('usage')" class="text-stone-600 hover:text-[#D4AF37] transition-colors">使用方式</button>
                 </div>
-                <button onclick="window.location.href='https://smarthealthypro.com/'" class="bg-stone-900 text-white px-4 py-2 rounded-full hover:bg-stone-700 transition text-sm">
+                <button onclick="window.location.href='#'" class="bg-stone-900 text-white px-6 py-2 rounded-full hover:bg-stone-700 transition text-sm font-medium">
                     加入會員購買
                 </button>
             </div>
@@ -114,298 +97,134 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-stone-800 mb-6 leading-tight">
-                眼神，決定你的<br/><span class="text-[#D4AF37]">視覺年齡</span>
+                <span class="text-[#D4AF37]">Lenadale</span> 逆齡眼膠<br/>重拾雙眸的閃耀光采
             </h1>
             <p class="mt-4 max-w-2xl mx-auto text-xl text-stone-600">
-                別讓眼周細紋出賣你的青春。藍娜黛兒逆齡眼膠，結合頂級胜肽科技與天然植萃，為您打造不動刀的居家醫美體驗。
+                不再讓細紋洩漏祕密。Lenadale 藍娜黛兒結合專利胜肽與西蘭花外泌體，打造全方位的眼周修護奇蹟。
             </p>
             <div class="mt-10 flex justify-center gap-4">
                 <button onclick="scrollToSection('evidence')" class="btn-primary px-8 py-3 rounded-full text-lg font-medium shadow-lg">
-                    見證 28 天奇蹟
+                    看 28 天實測結果
                 </button>
-                <button onclick="scrollToSection('ingredients')" class="bg-white text-stone-800 border border-stone-300 px-8 py-3 rounded-full text-lg font-medium hover:bg-stone-50 transition">
-                    探索成分
+                <button onclick="window.location.href='#'" class="bg-white text-stone-800 border border-stone-300 px-8 py-3 rounded-full text-lg font-medium hover:bg-stone-50 transition">
+                    立即加入會員
                 </button>
             </div>
         </div>
-        <!-- Decorative Background Elements (CSS Shapes) -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30">
-            <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-yellow-100 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-stone-200 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-20">
+            <div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-yellow-100 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] right-[-5%] w-96 h-96 bg-stone-200 rounded-full blur-3xl"></div>
         </div>
     </header>
 
-    <!-- Section 1: Diagnostics (Interactive) -->
+    <!-- Section: Diagnostics -->
     <section id="diagnosis" class="py-20 bg-white section-fade">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-[#D4AF37] font-semibold tracking-wide uppercase">肌膚檢測</span>
-                <h2 class="text-3xl font-bold text-stone-900 mt-2">你有以下眼周困擾嗎？</h2>
+                <h2 class="text-3xl font-bold text-stone-900">檢測您的眼周老化指數</h2>
                 <p class="mt-4 text-stone-500">
-                    點選您目前的肌膚狀況，讓我們為您分析藍娜黛兒如何協助您改善。
+                    針對不同的肌膚問題，Lenadale 提供最精準的科研對策。
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10" id="symptom-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10" id="symptom-grid">
                 <!-- Injected via JS -->
             </div>
 
             <div id="diagnosis-result" class="hidden glass-panel p-8 rounded-2xl text-center border-l-4 border-[#D4AF37]">
-                <h3 class="text-xl font-bold text-stone-800 mb-2">我們的解決方案</h3>
-                <p class="text-stone-600" id="diagnosis-text">
-                    <!-- Dynamic Text -->
-                </p>
+                <h3 class="text-xl font-bold text-stone-800 mb-2">專屬您的護理方案</h3>
+                <p class="text-stone-600" id="diagnosis-text"></p>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Ingredients (The Solution) -->
+    <!-- Section: Ingredients -->
     <section id="ingredients" class="py-20 bg-[#FDFBF7] section-fade">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-[#D4AF37] font-semibold tracking-wide uppercase">獨家配方</span>
-                <h2 class="text-3xl font-bold text-stone-900 mt-2">黑科技與植萃的完美結合</h2>
-                <p class="mt-4 text-stone-500 max-w-2xl mx-auto">
-                    我們精心挑選了最具活性的科學成分與最純淨的天然萃取，打造出黃金比例的抗老配方。點擊下方卡片了解更多。
-                </p>
+                <span class="text-[#D4AF37] font-semibold tracking-wide uppercase">成分科學</span>
+                <h2 class="text-3xl font-bold text-stone-900 mt-2">Lenadale 核心修護技術</h2>
             </div>
 
-            <!-- Filter Tabs -->
-            <div class="flex justify-center mb-10 space-x-4">
-                <button onclick="filterIngredients('all')" class="ing-filter active px-6 py-2 rounded-full text-sm font-medium bg-[#D4AF37] text-white shadow-md transition">全部</button>
-                <button onclick="filterIngredients('science')" class="ing-filter px-6 py-2 rounded-full text-sm font-medium bg-white text-stone-600 hover:bg-stone-100 transition">科研成分</button>
-                <button onclick="filterIngredients('nature')" class="ing-filter px-6 py-2 rounded-full text-sm font-medium bg-white text-stone-600 hover:bg-stone-100 transition">天然植萃</button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="ingredient-grid">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="ingredient-grid">
                 <!-- Injected via JS -->
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Mechanism (Process Flow) -->
-    <section class="py-20 bg-white section-fade border-y border-stone-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-[#D4AF37] font-semibold tracking-wide uppercase">作用原理</span>
-                <h2 class="text-3xl font-bold text-stone-900 mt-2">不動刀的「類肉毒」科技</h2>
-                <p class="mt-4 text-stone-500">
-                    了解 SpecPed® SKE 胜肽複合物如何像隱形熨斗一樣，撫平動態紋路。
-                </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 relative">
-                <!-- Step 1 -->
-                <div class="flex-1 bg-stone-50 p-6 rounded-xl border border-stone-200 text-center hover:shadow-lg transition cursor-default group">
-                    <div class="text-4xl mb-4">😠</div>
-                    <h4 class="font-bold text-stone-800 mb-2">表情收縮</h4>
-                    <p class="text-sm text-stone-500">頻繁的大笑、皺眉導致肌肉過度收縮，形成魚尾紋與抬頭紋。</p>
-                </div>
-
-                <!-- Arrow -->
-                <div class="text-2xl text-stone-300 font-bold rotate-90 md:rotate-0">➝</div>
-
-                <!-- Step 2 (The Intervention) -->
-                <div class="flex-1 bg-[#FFF9E5] p-6 rounded-xl border border-[#D4AF37] text-center shadow-md transform scale-105 z-10 group">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h4 class="font-bold text-[#9A7D0A] mb-2">胜肽阻斷</h4>
-                    <p class="text-sm text-stone-600">
-                        <span class="font-semibold">三胜肽 & 六胜肽</span> 模擬蛇毒血清，阻斷神經傳導物質，讓肌肉「放鬆」。
-                    </p>
-                </div>
-
-                <!-- Arrow -->
-                <div class="text-2xl text-stone-300 font-bold rotate-90 md:rotate-0">➝</div>
-
-                <!-- Step 3 -->
-                <div class="flex-1 bg-stone-50 p-6 rounded-xl border border-stone-200 text-center hover:shadow-lg transition cursor-default group">
-                    <div class="text-4xl mb-4">✨</div>
-                    <h4 class="font-bold text-stone-800 mb-2">平滑緊緻</h4>
-                    <p class="text-sm text-stone-500">肌肉放鬆後，動態紋路自然撫平，肌膚恢復平滑彈性。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Clinical Evidence (Charts) -->
-    <section id="evidence" class="py-20 bg-[#F5F5F4] section-fade">
+    <!-- Section: Evidence -->
+    <section id="evidence" class="py-20 bg-white section-fade">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-                
-                <!-- Text Content -->
-                <div class="lg:col-span-1">
-                    <span class="text-[#D4AF37] font-semibold tracking-wide uppercase">實驗室數據</span>
-                    <h2 class="text-3xl font-bold text-stone-900 mt-2 mb-6">28 天實測見證</h2>
-                    <p class="text-stone-600 mb-6">
-                        基於 SpecPed SKE (0.25% 溶液) 的臨床測試結果。受試者為 10 位 25-55 歲女性，每日早晚使用兩次。
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <button onclick="updateChart('volume')" class="chart-btn w-full text-left px-6 py-4 bg-white rounded-xl shadow-sm hover:shadow-md border-l-4 border-transparent hover:border-[#D4AF37] transition flex justify-between items-center group active-metric">
-                            <div>
-                                <span class="block text-sm text-stone-500">深度指標</span>
-                                <span class="block text-lg font-bold text-stone-800">皺紋體積 (Volume)</span>
-                            </div>
-                            <span class="text-stone-300 group-hover:text-[#D4AF37]">→</span>
-                        </button>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-stone-900">28 天實證：視覺減齡的證據</h2>
+                <p class="mt-4 text-stone-500">臨床測試結果顯示，持續使用能顯著降低皺紋深度與面積。</p>
+            </div>
 
-                        <button onclick="updateChart('area')" class="chart-btn w-full text-left px-6 py-4 bg-white rounded-xl shadow-sm hover:shadow-md border-l-4 border-transparent hover:border-[#D4AF37] transition flex justify-between items-center group">
-                            <div>
-                                <span class="block text-sm text-stone-500">範圍指標</span>
-                                <span class="block text-lg font-bold text-stone-800">皺紋面積 (Area)</span>
-                            </div>
-                            <span class="text-stone-300 group-hover:text-[#D4AF37]">→</span>
-                        </button>
-
-                        <button onclick="updateChart('ratio')" class="chart-btn w-full text-left px-6 py-4 bg-white rounded-xl shadow-sm hover:shadow-md border-l-4 border-transparent hover:border-[#D4AF37] transition flex justify-between items-center group">
-                            <div>
-                                <span class="block text-sm text-stone-500">密度指標</span>
-                                <span class="block text-lg font-bold text-stone-800">皺紋面積佔比 (Ratio)</span>
-                            </div>
-                            <span class="text-stone-300 group-hover:text-[#D4AF37]">→</span>
-                        </button>
-                    </div>
-
-                    <div class="mt-8 p-4 bg-stone-200 rounded-lg text-sm text-stone-600">
-                        *數據來源：SpecPed SKE(-P) 臨床測試報告。效果因人而異。
-                    </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1 space-y-4">
+                    <button onclick="updateChart('volume')" class="chart-btn w-full text-left px-6 py-4 bg-stone-50 rounded-xl border-l-4 border-[#D4AF37] transition shadow-sm">
+                        <span class="block text-sm text-stone-500">深度改善</span>
+                        <span class="block text-lg font-bold">皺紋體積 -15.68%</span>
+                    </button>
+                    <button onclick="updateChart('area')" class="chart-btn w-full text-left px-6 py-4 bg-white rounded-xl border-l-4 border-transparent hover:bg-stone-50 transition shadow-sm">
+                        <span class="block text-sm text-stone-500">範圍改善</span>
+                        <span class="block text-lg font-bold">皺紋面積 -20.26%</span>
+                    </button>
+                    <button onclick="updateChart('ratio')" class="chart-btn w-full text-left px-6 py-4 bg-white rounded-xl border-l-4 border-transparent hover:bg-stone-50 transition shadow-sm">
+                        <span class="block text-sm text-stone-500">密度改善</span>
+                        <span class="block text-lg font-bold">面積佔比 -19.23%</span>
+                    </button>
                 </div>
 
-                <!-- Chart Visualization -->
-                <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-lg">
-                    <div class="mb-4 flex justify-between items-end border-b border-stone-100 pb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-stone-800" id="chart-title">皺紋改善趨勢</h3>
-                            <p class="text-sm text-stone-500">數值越低代表改善效果越顯著</p>
-                        </div>
-                        <div class="text-right">
-                            <span class="block text-3xl font-bold text-[#D4AF37]" id="max-reduction">-20.26%</span>
-                            <span class="block text-xs text-stone-400">最大改善幅度 (28天)</span>
-                        </div>
-                    </div>
-                    
+                <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-inner border border-stone-100">
                     <div class="chart-container">
                         <canvas id="efficacyChart"></canvas>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Usage & Call to Action -->
+    <!-- Section: CTA -->
     <section id="usage" class="py-20 bg-stone-900 text-white section-fade">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-8">簡單三步，重現明亮眼神</h2>
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">讓 Lenadale 守護您的眼周肌膚</h2>
+            <p class="text-stone-400 mb-10 text-lg">加入會員，立即開啟您的 28 天逆齡計畫。</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
-                <div class="p-6 border border-stone-700 rounded-xl bg-stone-800 hover:bg-stone-700 transition">
-                    <div class="text-3xl mb-4">🧴</div>
-                    <h4 class="text-xl font-semibold mb-2">Step 1</h4>
-                    <p class="text-stone-300">取一粒米大小的眼膠。</p>
-                </div>
-                <div class="p-6 border border-stone-700 rounded-xl bg-stone-800 hover:bg-stone-700 transition">
-                    <div class="text-3xl mb-4">👆</div>
-                    <h4 class="text-xl font-semibold mb-2">Step 2</h4>
-                    <p class="text-stone-300">點塗於眼周肌膚（眼下、眼尾、眼皮）。</p>
-                </div>
-                <div class="p-6 border border-stone-700 rounded-xl bg-stone-800 hover:bg-stone-700 transition">
-                    <div class="text-3xl mb-4">💆‍♀️</div>
-                    <h4 class="text-xl font-semibold mb-2">Step 3</h4>
-                    <p class="text-stone-300">使用無名指輕柔按摩至吸收。</p>
-                </div>
-            </div>
-
-            <div class="glass-panel bg-white/10 p-10 rounded-3xl max-w-3xl mx-auto border border-white/20">
-                <h3 class="text-2xl font-bold mb-4">準備好改變了嗎？</h3>
-                <p class="text-stone-300 mb-8 text-lg">
-                    藍娜黛兒 Lanadelle 逆齡眼膠，讓你的眼睛永遠停留在最美的時刻。
-                </p>
-                <button onclick="window.location.href='https://smarthealthypro.com/'" class="btn-primary px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition">
+            <div class="bg-white/5 p-10 rounded-3xl border border-white/10 backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-6">專屬會員禮遇</h3>
+                <ul class="text-left max-w-xs mx-auto space-y-3 mb-10 text-stone-300">
+                    <li class="flex items-center">✓ 首次購物滿額優惠</li>
+                    <li class="flex items-center">✓ 專業美容諮詢服務</li>
+                    <li class="flex items-center">✓ 產品定期自動配送服務</li>
+                </ul>
+                <button onclick="window.location.href='#'" class="btn-primary px-12 py-4 rounded-full text-xl font-bold shadow-xl">
                     加入會員購買
                 </button>
-                <p class="mt-4 text-sm text-stone-400">加入購物車，開啟逆齡之旅</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-stone-950 text-stone-500 py-10 border-t border-stone-800">
+    <footer class="bg-stone-950 py-12 border-t border-stone-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <!-- Copyright text removed as requested -->
-            <p class="mt-2 text-sm">本網站內容僅供參考，實際效果因個人膚質而異。</p>
+            <!-- Brand name updated, copyright removed -->
+            <p class="text-stone-500 text-xl font-bold tracking-widest mb-4">LENADALE</p>
+            <p class="text-stone-600 text-sm">本網站內容基於臨床實驗報告，實際效果因個人膚質及使用習慣而異。</p>
         </div>
     </footer>
 
-    <!-- JavaScript Logic -->
     <script>
-        // --- Data Definitions ---
-        
         const ingredientsData = [
-            {
-                id: 1,
-                name: "西蘭花外泌體",
-                nameEn: "Broccoli Exosomes",
-                category: "science",
-                icon: "🥦",
-                desc: "植物細胞的「奈米傳令兵」。",
-                detail: "帶著修復命令深入肌膚底層，喚醒沉睡細胞，啟動自我修復機制。"
-            },
-            {
-                id: 2,
-                name: "三胜肽 + 六胜肽",
-                nameEn: "Peptide Complex",
-                category: "science",
-                icon: "💉",
-                desc: "不用打針的「類肉毒桿菌」。",
-                detail: "模擬蛇毒血清結構，放鬆眼周肌肉，撫平大笑或皺眉產生的動態細紋。"
-            },
-            {
-                id: 3,
-                name: "玻色因 + 神經醯胺",
-                nameEn: "Pro-Xylane & Ceramide",
-                category: "science",
-                icon: "💧",
-                desc: "肌膚的「強力膠」與「水庫」。",
-                detail: "玻色因撐起肌膚結構恢復緊緻；神經醯胺建立屏障，鎖住水分不流失。"
-            },
-            {
-                id: 4,
-                name: "梔子果萃取",
-                nameEn: "Gardenia Extract",
-                category: "nature",
-                icon: "🌼",
-                desc: "舒緩修復專家。",
-                detail: "具有優異的舒緩能力，調節肌膚免疫，幫助活化再生。"
-            },
-            {
-                id: 5,
-                name: "黑莓 & 葡萄柚",
-                nameEn: "Blackberry & Grapefruit",
-                category: "nature",
-                icon: "🍇",
-                desc: "抗氧化大師。",
-                detail: "富含抗氧化劑，對抗自由基，減緩細胞老化速度。"
-            },
-            {
-                id: 6,
-                name: "白柳皮萃取",
-                nameEn: "White Willow Bark",
-                category: "nature",
-                icon: "🌳",
-                desc: "溫柔的鎮定劑。",
-                detail: "天然的水楊酸來源，具消炎抗菌效果，能改善眼周暗沉與敏感。"
-            }
-        ];
-
-        const symptomData = [
-            { id: 'circles', text: '黑眼圈 / 暗沉', solution: '白柳皮與梔子果萃取能促進循環，淡化暗沉。' },
-            { id: 'lines', text: '魚尾紋 / 表情紋', solution: '三胜肽與六胜肽能放鬆肌肉，如同隱形熨斗般撫平紋路。' },
-            { id: 'dryness', text: '乾燥 / 卡粉', solution: '神經醯胺與玻色因提供深層保濕，讓眼妝更服貼。' },
-            { id: 'sagging', text: '眼皮鬆弛', solution: '西蘭花外泌體喚醒細胞再生，恢復肌膚彈性支撐力。' }
+            { name: "西蘭花外泌體", icon: "🥦", desc: "細胞傳令兵，喚醒修復本能。" },
+            { name: "三胜肽 + 六胜肽", icon: "🧬", desc: "放鬆肌肉收縮，撫平動態紋。" },
+            { name: "玻色因 Pro-Xylane", icon: "💎", desc: "撐起眼周結構，恢復緊緻度。" },
+            { name: "神經醯胺", icon: "💧", desc: "強化屏障功能，高效鎖水。" },
+            { name: "梔子果萃取", icon: "🌼", desc: "舒緩修護，調節肌膚免疫。" },
+            { name: "黑莓 & 葡萄柚", icon: "🍇", desc: "強效抗氧化，延緩細胞老化。" }
         ];
 
         const clinicalData = {
@@ -415,97 +234,51 @@
             ratio: [0, -6.47, -16.62, -19.23]
         };
 
-        // --- Application State ---
-        let currentMetric = 'volume';
+        const symptomData = [
+            { id: 'v1', text: '經常大笑或眨眼出現細紋', sol: '類肉毒胜肽能放鬆動態肌肉，平滑眼角。' },
+            { id: 'v2', text: '熬夜導致的暗沉與浮腫', sol: '白柳皮與梔子果萃取有助於舒緩與提亮。' },
+            { id: 'v3', text: '眼下乾燥導致上妝卡粉', sol: '神經醯胺與玻色因能深層補水，強化支撐。' },
+            { id: 'v4', text: '感覺眼皮鬆弛不夠緊緻', sol: '外泌體技術能深入喚醒細胞，重塑緊實度。' }
+        ];
+
         let chartInstance = null;
 
-        // --- Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
+            renderIngredients();
             renderSymptoms();
-            renderIngredients('all');
             initChart();
             setupScrollAnimation();
         });
 
-        // --- Functions: Diagnostics ---
-        function renderSymptoms() {
-            const grid = document.getElementById('symptom-grid');
-            grid.innerHTML = symptomData.map(s => `
-                <button onclick="diagnose('${s.id}')" 
-                    class="p-6 rounded-xl border-2 border-stone-100 hover:border-[#D4AF37] bg-white text-left transition hover:shadow-lg group">
-                    <div class="flex items-center justify-between">
-                        <span class="font-medium text-lg text-stone-700 group-hover:text-[#D4AF37]">${s.text}</span>
-                        <span class="text-stone-300 group-hover:text-[#D4AF37] text-2xl">+</span>
-                    </div>
-                </button>
-            `).join('');
-        }
-
-        function diagnose(id) {
-            const symptom = symptomData.find(s => s.id === id);
-            const resultBox = document.getElementById('diagnosis-result');
-            const resultText = document.getElementById('diagnosis-text');
-            
-            resultText.innerHTML = `<span class="font-bold text-[#D4AF37]">針對${symptom.text}：</span> ${symptom.solution}`;
-            
-            resultBox.classList.remove('hidden');
-            resultBox.classList.add('animate-pulse');
-            setTimeout(() => resultBox.classList.remove('animate-pulse'), 500);
-        }
-
-        // --- Functions: Ingredients ---
-        function renderIngredients(filter) {
+        function renderIngredients() {
             const grid = document.getElementById('ingredient-grid');
-            const filtered = filter === 'all' ? ingredientsData : ingredientsData.filter(i => i.category === filter);
-            
-            // Update buttons
-            document.querySelectorAll('.ing-filter').forEach(btn => {
-                if((filter === 'all' && btn.innerText === '全部') || 
-                   (filter === 'science' && btn.innerText.includes('科研')) || 
-                   (filter === 'nature' && btn.innerText.includes('植萃'))) {
-                    btn.classList.add('bg-[#D4AF37]', 'text-white');
-                    btn.classList.remove('bg-white', 'text-stone-600');
-                } else {
-                    btn.classList.remove('bg-[#D4AF37]', 'text-white');
-                    btn.classList.add('bg-white', 'text-stone-600');
-                }
-            });
-
-            grid.innerHTML = filtered.map(item => `
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-stone-100 group">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-stone-50 rounded-full flex items-center justify-center text-2xl mb-4 group-hover:bg-[#FFF9E5] transition">
-                            ${item.icon}
-                        </div>
-                        <h3 class="font-bold text-lg text-stone-800">${item.name}</h3>
-                        <p class="text-xs text-[#D4AF37] font-medium mb-3 uppercase tracking-wider">${item.nameEn}</p>
-                        <p class="text-stone-500 text-sm mb-4">${item.desc}</p>
-                        <div class="pt-4 border-t border-stone-100 text-sm text-stone-600 leading-relaxed bg-stone-50/50 -mx-6 -mb-6 p-6">
-                            ${item.detail}
-                        </div>
-                    </div>
+            grid.innerHTML = ingredientsData.map(item => `
+                <div class="bg-white p-8 rounded-2xl border border-stone-100 hover:shadow-xl transition group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition duration-300">${item.icon}</div>
+                    <h3 class="font-bold text-lg mb-2">${item.name}</h3>
+                    <p class="text-stone-500 text-sm">${item.desc}</p>
                 </div>
             `).join('');
         }
 
-        function filterIngredients(category) {
-            const grid = document.getElementById('ingredient-grid');
-            grid.style.opacity = '0';
-            setTimeout(() => {
-                renderIngredients(category);
-                grid.style.opacity = '1';
-            }, 200);
+        function renderSymptoms() {
+            const grid = document.getElementById('symptom-grid');
+            grid.innerHTML = symptomData.map(s => `
+                <button onclick="showDiagnosis('${s.id}')" class="p-6 rounded-xl border border-stone-200 bg-white text-left hover:border-[#D4AF37] transition group">
+                    <span class="block font-medium text-stone-700 group-hover:text-[#D4AF37]">${s.text}</span>
+                </button>
+            `).join('');
         }
 
-        // --- Functions: Charts (Chart.js) ---
+        function showDiagnosis(id) {
+            const s = symptomData.find(x => x.id === id);
+            const res = document.getElementById('diagnosis-result');
+            document.getElementById('diagnosis-text').innerText = s.sol;
+            res.classList.remove('hidden');
+        }
+
         function initChart() {
             const ctx = document.getElementById('efficacyChart').getContext('2d');
-            
-            // Gradient fill
-            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, 'rgba(212, 175, 55, 0.5)'); // Gold
-            gradient.addColorStop(1, 'rgba(212, 175, 55, 0.0)');
-
             chartInstance = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -514,45 +287,22 @@
                         label: '改善百分比 (%)',
                         data: clinicalData.volume,
                         borderColor: '#D4AF37',
-                        backgroundColor: gradient,
-                        borderWidth: 3,
-                        pointBackgroundColor: '#fff',
-                        pointBorderColor: '#D4AF37',
-                        pointRadius: 6,
-                        pointHoverRadius: 8,
+                        backgroundColor: 'rgba(212, 175, 55, 0.1)',
                         fill: true,
-                        tension: 0.4
+                        tension: 0.4,
+                        pointRadius: 5
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: 'rgba(60, 60, 60, 0.9)',
-                            padding: 12,
-                            callbacks: {
-                                label: function(context) {
-                                    return `減少 ${Math.abs(context.raw)}%`;
-                                }
-                            }
-                        }
-                    },
+                    plugins: { legend: { display: false } },
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 5,
+                        y: { 
+                            beginAtZero: true, 
+                            max: 5, 
                             min: -25,
-                            grid: { color: '#f3f4f6' },
-                            ticks: {
-                                callback: function(value) { return value + "%"; },
-                                color: '#9ca3af'
-                            }
-                        },
-                        x: {
-                            grid: { display: false },
-                            ticks: { color: '#4b5563', font: { weight: 'bold' } }
+                            ticks: { callback: v => v + '%' }
                         }
                     }
                 }
@@ -560,57 +310,30 @@
         }
 
         function updateChart(metric) {
-            currentMetric = metric;
-            
-            // Visual Active State for Buttons
-            document.querySelectorAll('.chart-btn').forEach(btn => btn.classList.remove('border-[#D4AF37]', 'bg-stone-50'));
-            // Note: simple class toggle logic here for demo, clicking triggers re-render anyway
-            
-            // Update Data
             chartInstance.data.datasets[0].data = clinicalData[metric];
             chartInstance.update();
-
-            // Update Text Labels
-            const maxVal = Math.min(...clinicalData[metric]);
-            document.getElementById('max-reduction').innerText = maxVal + "%";
             
-            let title = "";
-            if(metric === 'volume') title = "皺紋體積減少 (Depth & Size)";
-            if(metric === 'area') title = "皺紋面積減少 (Width & Length)";
-            if(metric === 'ratio') title = "皺紋密度減少 (Overall Ratio)";
-            document.getElementById('chart-title').innerText = title;
+            document.querySelectorAll('.chart-btn').forEach(btn => {
+                btn.classList.remove('bg-stone-50', 'border-[#D4AF37]');
+                btn.classList.add('bg-white', 'border-transparent');
+            });
+            event.currentTarget.classList.add('bg-stone-50', 'border-[#D4AF37]');
+            event.currentTarget.classList.remove('border-transparent');
         }
 
-        // --- Functions: Utility ---
         function scrollToSection(id) {
-            const el = document.getElementById(id);
-            if(el) {
-                const offset = 80; // nav height
-                const bodyRect = document.body.getBoundingClientRect().top;
-                const elementRect = el.getBoundingClientRect().top;
-                const elementPosition = elementRect - bodyRect;
-                const offsetPosition = elementPosition - offset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
         function setupScrollAnimation() {
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('section-visible');
-                    }
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('section-visible');
                 });
             }, { threshold: 0.1 });
-
-            document.querySelectorAll('.section-fade').forEach(section => {
-                observer.observe(section);
-            });
+            document.querySelectorAll('.section-fade').forEach(s => observer.observe(s));
         }
     </script>
 </body>
 </html>
+
